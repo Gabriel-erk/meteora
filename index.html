@@ -11,7 +11,8 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <!-- sm seguindo os breakpoins para que ele apenas fique no modo de "menu hamburger" em telas menores que 576px, assim, atingindo mais as telas de celulares e seguindo a prototipação do figma -->
+    <nav class="navbar navbar-expand-sm bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -20,7 +21,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- comandos anteriores que vieram por padrão e estavam causando bugs em algumas telas: "mb-2 mb-lg-0" - lg se aplica apenas a telas >=992px e estavam conflitando em outras resoluções deixando o espaçamento desequilibrado (mb-2 já bugava todas as resoluções mesmo, pois era geral, e em telas maiores dava uma disfarçada apenas) -->
+                <ul class="navbar-nav me-auto ">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
@@ -291,7 +293,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
