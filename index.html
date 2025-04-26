@@ -112,6 +112,7 @@
     <!-- mx-auto diz para calcular automaticamente os margins laterais (left e right), onde aqui está centralizando os elementos filhos na tela e g-4 nada mais é que o comando css: gap, onde 4 determina o "número de pixels" (no bootstrap vai de 1-5) e o valor do gap não influencia na quantidade de colunas que cada card ocupa, então, se um card ocupa 4 colunas e possui g-5, ele não terá influência (ou terá pouca nesse espaçamento dos cards)-->
     <div class="container row mx-auto g-4">
 
+        <!-- !o que coloca o espaçamento lateral entre os cards é a divisão de colunas, os comandos "col-6 col-md-4 col-xxl-2 etc." -->
         <!-- col-6 por si só refere-se a telas de celular (pensando em boas práticas) -->
         <!-- col-md-4 atinge telas de tablets, onde, quero que cada card ocupe 4 colunas (como são 12, 3 cards = 12 colunas) -->
         <!-- col-xxl-2 refere-se a telas de monitores e quero que neles todos os cards fiquem na mesma linha, ou seja, quero que cada card ocupe 2 colunas, aqui tenho 6 cards, logo: 6 * 2 = 12 (assim ocupando fazendo que todos os cards ocupem as colunas de apenas uma linha)-->
@@ -210,7 +211,9 @@
     <h2 class="text-center">Produtos que estão bombando!</h2>
 
     <!-- deixando da forma que instrutor ensinou, porém (e também acho melhor) é possível resolver isso utilizando gap-4 apenas na div pai das colunas ao inves de pb-4 -->
-     <!-- um motivo para ele ter usado pb-4 é porque o gap da um espaçamento em todos os lados do card, onde nesta situação, onde para celular é não é necessário utilizar um espaçamento do lado pois fica um em cada linha, é melhor ter apenas o espaçamento onde necessário (no caso, embaixo) -->
+    <!-- um motivo para ele ter usado pb-4 é porque o gap da um espaçamento em todos os lados do card, onde nesta situação, onde para celular é não é necessário utilizar um espaçamento do lado pois fica um em cada linha, é melhor ter apenas o espaçamento onde necessário (no caso, embaixo) -->
+    <!-- mx-autro faz o row centralizar no meio da tela -->
+    <!-- !o que coloca o espaçamento lateral entre os cards é a divisão de colunas, os comandos "col-6 col-md-4 col-xxl-2 etc." -->
     <div class="container row mx-auto">
 
         <div class="col-12 col-md-6 col-xl-4 pb-4">
