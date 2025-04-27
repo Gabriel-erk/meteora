@@ -24,8 +24,9 @@
     color: var(--cor-e-icone-rodape);
 }
 
-@media screen and (min-width: 1200px) {
-    .formulario {
-        width: ;
-    }
+/* definindo que até essa largura (tablet) os elementos aqui dentro terão as configs que irei colocar */
+@media screen and (max-width: 768px) {
+  .formulario h5 {
+    font-size: .9em;
+  }
 }
