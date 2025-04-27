@@ -1,3 +1,8 @@
+:root{
+    --cor-botao-ver-mais: #9353FF;
+    --cor-e-icone-rodape: #DAFF01;
+}
+
 .texto-menor {
     font-size: 13px;
 }
@@ -5,4 +10,8 @@
 /* sempre que for utilizar flex é de extrema importância deixar definido o tamanho dos elementos filhos, para que não ocorra um comportamento inesperado/ocupem toda a largura disponível */
 .divs-facilidades {
     width: 325px;
+}
+
+.ver_mais_button {
+    background-color: var(--cor-botao-ver-mais);
 }

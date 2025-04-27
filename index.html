@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- adicionando logo ao lado do title da página -->
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
     <title>Meteora</title>
     <link rel="stylesheet" href="style.css">
     <!-- link para incluir os ícones do bootstrap no projeto, este metódo abaixo é via cdn -->
@@ -15,9 +17,15 @@
 <body>
 
     <!-- sm seguindo os breakpoins para que ele apenas fique no modo de "menu hamburger" em telas menores que 576px, assim, atingindo mais as telas de celulares e seguindo a prototipação do figma -->
-    <nav class="navbar navbar-expand-sm bg-body-tertiary">
+    <nav class="navbar navbar-expand-sm bg-black navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <!--! ao addicionar img ela ocupa mais espaço que deveria e descentraliza os nossos elementos da navbar -->
+            <!-- ? para corrigir isso, utiliza-se d-block na img para fazer com que ela ocupe apenas o espaço que ela tem (largura x altura), pois quando se adiciona uma imagem na aplicação, ela geralmente vem com um espaçemento que atrapalha os elementos ao redor -->
+            <!-- ? também usamos m-0 em h1 para remover toda a margem que ele possui por padrão -->
+            <!-- ? adicionamos a img dentro de um h1 por questões de SEO, pois os mecanismos de busca (navegadores etc) priorizam o conteúdo dentro do h1, e encontrar de cara a logo da empresa é bom para a marca -->
+            <a class="navbar-brand" href="#">
+                <h1 class="m-0"><img class="d-block" src="./assets/logo-meteora.png" alt=""></h1>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -40,8 +48,8 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Digite o produto" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    <input class="form-control me-2 rounded-0" type="search" placeholder="Digite o produto" aria-label="Search">
+                    <button class="btn btn-outline-light rounded-0" type="submit">Buscar</button>
                 </form>
             </div>
         </div>
@@ -391,8 +399,8 @@
         <!-- input group junta o input dentro da div com seu respectivo botão -->
         <div class="input-group my-3">
             <!-- form-control faz o input (juntamente do seu botão) ocuparem toda a largura disponível -->
-            <input type="email" class="form-control border border-secondary rounded-1" placeholder="Digite seu e-mail" aria-label="Digite seu e-mail"
-                aria-describedby="button-addon2" />
+            <input type="email" class="form-control border border-secondary rounded-1" placeholder="Digite seu e-mail"
+                aria-label="Digite seu e-mail" aria-describedby="button-addon2" />
             <button type="button" id="button-addon2">Enviar</button>
         </div>
     </form>
@@ -400,7 +408,8 @@
     <!--!por mais queseja possível colocar o icone de "©" existem alguns navegadores que não conseguem interpreta-lo -->
     <!-- !para evitar qualquer tipo de problema, o bootstrap, dentro de seus ícones, oferece ese mesmo símbolo, que estamos utilizando logo abaixo -->
     <footer class="text-center">
-        <p class="py-3">2023 <i class="bi bi-c-circle"></i> Desenvolvido por Alura | Projeto fictício sem fins comerciais.</p>
+        <p class="py-3">2023 <i class="bi bi-c-circle"></i> Desenvolvido por Alura | Projeto fictício sem fins
+            comerciais.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
