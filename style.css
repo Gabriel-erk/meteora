@@ -1,3 +1,8 @@
 .texto-menor {
     font-size: 13px;
 }
+
+/* sempre que for utilizar flex é de extrema importância deixar definido o tamanho dos elementos filhos, para que não ocorra um comportamento inesperado/ocupem toda a largura disponível */
+.divs-facilidades {
+    width: 325px;
+}
