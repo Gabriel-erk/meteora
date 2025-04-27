@@ -6,7 +6,8 @@
 }
 
 /* garantindo que o body e html utilizem 100% da sua altura dísponivel, fazendo com que o footer fique alocado na parte inferior da página corretamente */
-body, html {
+body,
+html {
     height: 100%;
 }
 
@@ -25,7 +26,7 @@ body, html {
 }
 
 .btn-lilas {
-    background-color: var(--cor-botao-ver-mais) !important ; 
+    background-color: var(--cor-botao-ver-mais) !important;
 }
 
 .btn-lilas:hover {
@@ -36,11 +37,25 @@ body, html {
     color: var(--cor-e-icone-rodape);
 }
 
+/* 
+  * defininddo a posição da div com os textos dos banners (porém apenas para telas de tablets e desktops aqui)
+  */
+.posicao {
+    top: 40%;
+}
+
 /* definindo que até essa largura (tablet) os elementos aqui dentro terão as configs que irei colocar */
 @media screen and (max-width: 768px) {
-  .formulario h5 {
-    font-size: 1em;
-  }
+    .formulario h5 {
+        font-size: 1em;
+    }
+
+    /* 
+  * defininddo a posição da div com os textos dos banners (porém apenas para telas de celulares aqui)
+  */
+    .posicao {
+        top: 60%;
+    }
 }
 
 /* para poder manipular o elemento corretamente com o flex, quero essa largura pra ele apenas nessas telas */
