@@ -23,3 +23,9 @@
 .verde_limao {
     color: var(--cor-e-icone-rodape);
 }
+
+@media screen and (min-width: 1200px) {
+    .formulario {
+        width: ;
+    }
+}

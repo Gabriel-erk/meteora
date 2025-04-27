@@ -18,7 +18,8 @@
 
     <!-- sm seguindo os breakpoins para que ele apenas fique no modo de "menu hamburger" em telas menores que 576px, assim, atingindo mais as telas de celulares e seguindo a prototipação do figma -->
     <!-- ! bg-black não se encontra na doc (tb n achei navbar-dark) - porém, o bg black deixa o fundo em preto e navbar-dark faz o conteúdo da navbar(textos etc) se adaptarem ao fundo escurto, ou seja, ficam mais claros -->
-    <nav class="navbar navbar-expand-sm bg-black navbar-dark">
+    <!-- deixei md, pois a partir de 600 e pouco px a tela estava bugando  parte de pesquisa/busca na navbar que ficava para fora da tela, então para normalizar deixei a partir de tablests -->
+    <nav class="navbar navbar-expand-md bg-black navbar-dark">
         <div class="container-fluid">
             <!--! ao addicionar img ela ocupa mais espaço que deveria e descentraliza os nossos elementos da navbar -->
             <!-- ? para corrigir isso, utiliza-se d-block na img para fazer com que ela ocupe apenas o espaço que ela tem (largura x altura), pois quando se adiciona uma imagem na aplicação, ela geralmente vem com um espaçemento que atrapalha os elementos ao redor -->
@@ -399,12 +400,12 @@
 
     </section>
 
-    <form class="border border-secondary m-5 p-3 text-center">
+    <form class="border border-secondary m-5 p-3 text-center formulario">
         <h5>Quer receber nossas novidades, promoções exclusivas e 10% OFF na primeira compra? Cadastre-se!</h5>
         <!-- input group junta o input dentro da div com seu respectivo botão -->
         <div class="input-group my-3">
             <!-- form-control faz o input (juntamente do seu botão) ocuparem toda a largura disponível -->
-            <input type="email" class="form-control border border-secondary rounded-" placeholder="Digite seu e-mail"
+            <input type="email" class="form-control border border-secondary rounded-0" placeholder="Digite seu e-mail"
                 aria-label="Digite seu e-mail" aria-describedby="button-addon2" />
             <button type="button" id="button-addon2" class="btn-lilas border-0 text-white">Enviar</button>
         </div>
