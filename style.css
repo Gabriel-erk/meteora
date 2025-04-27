@@ -12,8 +12,12 @@
     width: 325px;
 }
 
-.botao_lilas {
-    background-color: var(--cor-botao-ver-mais);
+.btn-lilas {
+    background-color: var(--cor-botao-ver-mais) !important ; 
+}
+
+.btn-lilas:hover {
+    background-color: #7a40cc !important;
 }
 
 .verde_limao {
