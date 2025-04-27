@@ -1,4 +1,4 @@
-:root{
+:root {
     --cor-botao-ver-mais: #9353FF;
     --cor-e-icone-rodape: #DAFF01;
 }
@@ -12,6 +12,10 @@
     width: 325px;
 }
 
-.ver_mais_button {
+.botao_lilas {
     background-color: var(--cor-botao-ver-mais);
+}
+
+.verde_limao {
+    color: var(--cor-e-icone-rodape);
 }
