@@ -128,18 +128,17 @@
         <!-- col-md-4 atinge telas de tablets, onde, quero que cada card ocupe 4 colunas (como são 12, 3 cards = 12 colunas) -->
         <!-- col-xxl-2 refere-se a telas de monitores e quero que neles todos os cards fiquem na mesma linha, ou seja, quero que cada card ocupe 2 colunas, aqui tenho 6 cards, logo: 6 * 2 = 12 (assim ocupando fazendo que todos os cards ocupem as colunas de apenas uma linha)-->
         <div class="col-6 col-md-4 col-xxl-2">
-            <div class="card">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap"
-                    preserveAspectRatio="xMidYMid slice">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                </svg>
+            <div class="card rounded-0 border-none">
+                <!-- ? de telas md para cima não aparece, apenas para sm para baixo (ou seja, telas de celulares) -->
+                <img class="d-md-none" src="./assets/Mobile/categorias/categoria-camiseta.png" alt="Camiseta masculina de manga na cor verde, com bolso e detalhe em vermelho.">
+                <!-- ? por padrão não aparece, porém aparece em telas md e em telas xl não -->
+                <img class="d-none d-md-block d-xl-none" src="./assets/Mobile/categorias/categoria-camiseta.png" alt="Camiseta masculina de manga na cor verde, com bolso e detalhe em vermelho.">
+                <!-- ? por padrão não aparece, porém aparece em telas xl -->
+                <img class="d-none d-xl-block" src="./assets/Mobile/categorias/categoria-camiseta.png" alt="Camiseta masculina de manga na cor verde, com bolso e detalhe em vermelho.">
                 <!-- ? card text é adicionado para ajustar o texto dentro do card, ficando "mais bonito visualmente" através de espaçamentos extras, da impressão de estar mais organizado no card e se alinha com o estilo padrão de cards do bootstrap (além é claro, de remover aquele espaçamento ridículo que toda tag "p" possui no bootstrap) -->
                 <!-- ? text-bg-dark deixa a cor dos textos em branco também (acredito que a função dessa classe é fazer com que os textos filhos tenham a cor branca por saberem que o bg é escuro, onde, não faria sentido text-bg-dark deixar escuro também sendo que o fundo da div já é escuro, loucura né?) -->
                 <div class="card-header bg-black text-bg-dark">
-                    <p class="text-center card-text">Categoria</p>
+                    <p class="text-center card-text">Camisetas</p>
                 </div>
             </div>
         </div>
@@ -154,7 +153,7 @@
                     <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
                 </svg>
                 <div class="card-header bg-black text-bg-dark">
-                    <p class="text-center card-text">Categoria</p>
+                    <p class="text-center card-text">Bolsas</p>
                 </div>
             </div>
         </div>
