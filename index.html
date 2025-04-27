@@ -400,16 +400,20 @@
 
     </section>
 
-    <form class="border border-secondary m-5 p-3 text-center formulario">
-        <h5>Quer receber nossas novidades, promoções exclusivas e 10% OFF na primeira compra? Cadastre-se!</h5>
-        <!-- input group junta o input dentro da div com seu respectivo botão -->
-        <div class="input-group my-3">
-            <!-- form-control faz o input (juntamente do seu botão) ocuparem toda a largura disponível -->
-            <input type="email" class="form-control border border-secondary rounded-0" placeholder="Digite seu e-mail"
-                aria-label="Digite seu e-mail" aria-describedby="button-addon2" />
-            <button type="button" id="button-addon2" class="btn-lilas border-0 text-white">Enviar</button>
-        </div>
-    </form>
+    <!-- my para não ficar colado nas caixas debaixo e de cime e mx-4 para não ficar colado nas extremidades em telas menores -->
+    <!-- !nas telas de navegador estava ocupando muito espaço, tava achando feio, então fiz uma baianada para atindir apenas telas xl (1200px), defini uma largura fixa para o a classe formulario nessas condições e alinhei ao centro, ficando exatamente como eu queria e não estranho ocupando todo aquele espaço desnecessário no desktop -->
+    <div class="d-xl-flex justify-content-xl-center my-5 mx-4">
+        <form class="border border-secondary p-4 text-center formulario">
+            <h5>Quer receber nossas novidades, promoções exclusivas e 10% OFF na primeira compra? Cadastre-se!</h5>
+            <!-- input group junta o input dentro da div com seu respectivo botão -->
+            <div class="input-group my-3">
+                <!-- form-control faz o input (juntamente do seu botão) ocuparem toda a largura disponível -->
+                <input type="email" class="form-control border border-secondary rounded-0"
+                    placeholder="Digite seu e-mail" aria-label="Digite seu e-mail" aria-describedby="button-addon2" />
+                <button type="button" id="button-addon2" class="btn-lilas border-0 text-white">Enviar</button>
+            </div>
+        </form>
+    </div>
 
     <!--!por mais queseja possível colocar o icone de "©" existem alguns navegadores que não conseguem interpreta-lo -->
     <!-- !para evitar qualquer tipo de problema, o bootstrap, dentro de seus ícones, oferece ese mesmo símbolo, que estamos utilizando logo abaixo -->
