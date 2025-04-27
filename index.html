@@ -119,7 +119,7 @@
         </button>
     </div>
 
-    <h2 class="text-center">Busque por categoria</h2>
+    <h2 class="text-center py-3">Busque por categoria</h2>
 
     <!-- para possuir colunas é necessário uma linha, por isso o comando row, em cada linha, tenho 12 colunas, aqui, quero que cada card ocupe 6 colunas (ocupou as colunas, o próximo card vai "para baixo" e ocupa 6 colunas abaixo do card que já ocupou o restante acima) -->
     <!-- mx-auto diz para calcular automaticamente os margins laterais (left e right), onde aqui está centralizando os elementos filhos na tela e g-4 nada mais é que o comando css: gap, onde 4 determina o "número de pixels" (no bootstrap vai de 1-5) e o valor do gap não influencia na quantidade de colunas que cada card ocupa, então, se um card ocupa 4 colunas e possui g-5, ele não terá influência (ou terá pouca nesse espaçamento dos cards)-->
@@ -223,7 +223,7 @@
 
     </div>
 
-    <h2 class="text-center">Produtos que estão bombando!</h2>
+    <h2 class="text-center py-3">Produtos que estão bombando!</h2>
 
     <!-- deixando da forma que instrutor ensinou, porém (e também acho melhor) é possível resolver isso utilizando gap-4 apenas na div pai das colunas ao inves de pb-4 -->
     <!-- um motivo para ele ter usado pb-4 é porque o gap da um espaçamento em todos os lados do card, onde nesta situação, onde para celular é não é necessário utilizar um espaçamento do lado pois fica um em cada linha, é melhor ter apenas o espaçamento onde necessário (no caso, embaixo) -->
@@ -368,7 +368,7 @@
     <!-- uso de section ao invés de uma div aqui por conta de semântica mesmo, pois seria possível alcançar o mesmo resultado com uma div -->
     <section class="pb-4 bg-black text-white">
 
-        <h2 class="text-center">Conheça todas as nossas facilidades</h2>
+        <h2 class="text-center py-3">Conheça todas as nossas facilidades</h2>
 
         <div class="d-flex flex-column flex-lg-row align-items-center justify-content-lg-center gap-3 px-lg-3">
             <div class="divs-facilidades d-flex align-items-lg-center">
@@ -399,12 +399,12 @@
 
     </section>
 
-    <form class="border border-secondary m-3 p-3 text-center">
+    <form class="border border-secondary m-5 p-3 text-center">
         <h5>Quer receber nossas novidades, promoções exclusivas e 10% OFF na primeira compra? Cadastre-se!</h5>
         <!-- input group junta o input dentro da div com seu respectivo botão -->
         <div class="input-group my-3">
             <!-- form-control faz o input (juntamente do seu botão) ocuparem toda a largura disponível -->
-            <input type="email" class="form-control border border-secondary rounded-1" placeholder="Digite seu e-mail"
+            <input type="email" class="form-control border border-secondary rounded-" placeholder="Digite seu e-mail"
                 aria-label="Digite seu e-mail" aria-describedby="button-addon2" />
             <button type="button" id="button-addon2" class="btn-lilas border-0 text-white">Enviar</button>
         </div>
