@@ -229,7 +229,8 @@
 
     </div>
 
-    <h2 class="text-center my-3 my-md-5">Produtos que estão bombando!</h2>
+    <!-- container para ajustar em telas menores -->
+    <h2 class="container text-center my-3 my-md-5">Produtos que estão bombando!</h2>
 
     <!-- deixando da forma que instrutor ensinou, porém (e também acho melhor) é possível resolver isso utilizando gap-4 apenas na div pai das colunas ao inves de pb-4 -->
     <!-- um motivo para ele ter usado pb-4 é porque o gap da um espaçamento em todos os lados do card, onde nesta situação, onde para celular é não é necessário utilizar um espaçamento do lado pois fica um em cada linha, é melhor ter apenas o espaçamento onde necessário (no caso, embaixo) -->
@@ -285,21 +286,16 @@
         </div>
 
         <div class="col-12 col-md-6 col-xl-4 pb-4">
-            <div class="card">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap"
-                    preserveAspectRatio="xMidYMid slice">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                </svg>
+            <div class="card h-100 rounded-0 border-none">
+                <img class="d-md-none" src="./assets/Mobile/produtos/tenis.png" alt="Par de Tênis Chunky brancos.">
+                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/produtos/tenis.png" alt="Par de Tênis Chunky brancos.">
+                <img class="d-none d-xl-block" src="./assets/Desktop/produtos/tenis.png" alt="Par de Tênis Chunky brancos.">
                 <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
+                    <h5 class="card-title">Tênis Chunky</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        Snicker casual com solado mais alto e modelagem robusta. Modelo unissex.
                     </p>
-                    <p>R$ 30,00</p>
+                    <p class="fw-bold">R$ 250,00</p>
                     <a href="#" class="btn btn-lilas text-white rounded-0 border-0">Ver mais</a>
                 </div>
 
@@ -307,21 +303,18 @@
         </div>
 
         <div class="col-12 col-md-6 col-xl-4 pb-4">
-            <div class="card">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap"
-                    preserveAspectRatio="xMidYMid slice">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                </svg>
+            <div class="card h-100 rounded-0 border-none">
+                <img class="d-md-none" src="./assets/Mobile/produtos/jaqueta-jeans.png" alt="Jaqueta Jeans masculina.">
+
+                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/produtos/jaqueta-jeans.png" alt="Jaqueta Jeans masculina.">
+                <img class="d-none d-xl-block" src="./assets/Desktop/produtos/jaqueta-jeans.png" alt="Jaqueta Jeans masculina.">
+
                 <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
+                    <h5 class="card-title">Jaqueta Jeans</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        Modelo unissex oversized com gola de camurça. Atemporal e autêntica!
                     </p>
-                    <p>R$ 30,00</p>
+                    <p class="fw-bold">R$ 30,00</p>
                     <a href="#" class="btn btn-lilas text-white rounded-0 border-0">Ver mais</a>
                 </div>
 
@@ -329,21 +322,18 @@
         </div>
 
         <div class="col-12 col-md-6 col-xl-4 pb-4">
-            <div class="card">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap"
-                    preserveAspectRatio="xMidYMid slice">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                </svg>
+            <div class="card h-100 rounded-0 border-none">
+                <img class="d-md-none" src="./assets/Mobile/produtos/oculos.png" alt="Òculos de grau masculino.">
+
+                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/produtos/oculos.png" alt="Òculos de grau masculino.">
+                <img class="d-none d-xl-block" src="./assets/Desktop/produtos/oculos.png" alt="Òculos de grau masculino.">
+
                 <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
+                    <h5 class="card-title">Óculos Redondo</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        Armação metálica em grafite com lentes arredondadas. Sem erro!
                     </p>
-                    <p>R$ 30,00</p>
+                    <p class="fw-bold">R$ 120,00</p>
                     <a href="#" class="btn btn-lilas text-white rounded-0 border-0">Ver mais</a>
                 </div>
 
@@ -351,21 +341,18 @@
         </div>
 
         <div class="col-12 col-md-6 col-xl-4 pb-4">
-            <div class="card">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap"
-                    preserveAspectRatio="xMidYMid slice">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                </svg>
+            <div class="card h-100 rounded-0 border-none">
+                <img class="d-md-none" src="./assets/Mobile/produtos/bolsa.png" alt="Òculos de grau masculino.">
+
+                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/produtos/bolsa.png" alt="Òculos de grau masculino.">
+                <img class="d-none d-xl-block" src="./assets/Desktop/produtos/bolsa.png" alt="Òculos de grau masculino.">
+
                 <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
+                    <h5 class="card-title">Bolsa coringa</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        Bolsa camel em couro sintético de alta duração. Ideal para acompanhar você por uma vida!
                     </p>
-                    <p>R$ 30,00</p>
+                    <p class="fw-bold">R$ 120,00</p>
                     <a href="#" class="btn btn-lilas text-white rounded-0 border-0">Ver mais</a>
                 </div>
 
