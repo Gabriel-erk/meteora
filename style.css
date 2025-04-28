@@ -57,22 +57,6 @@ html {
         top: 60%;
     }
 }
-/*
- ! botão de ver mais e valor estavam ficando desalinhados com os outros cards, então fixei suas posiçoes baseados em cada tipo de tela, para que fiquem sempre alinhados, como para mobile eles nunca ficam lado a lado, apenas coloco position absolute nas queries (tamanhos de tela) que precisarei alterar 
- */
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    .valor-ver-mais {
-        position: absolute;
-        top: 64%
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .valor-ver-mais {
-        position: absolute;
-        top: 60%
-    }
-}
 
 /* para poder manipular o elemento corretamente com o flex, quero essa largura pra ele apenas nessas telas */
 @media screen and (min-width: 1200px) {
