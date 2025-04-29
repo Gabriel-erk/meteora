@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- facilitando acessibilidade para leitores de tela -->
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -50,8 +51,9 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
+                    <!-- para os leitores de tela, o conteúdo do aria label será falado para eles, por isso é importante deixa-los explicativos e em português (como peguei do bootstrap, ele estava em inglês (search)) -->
                     <input class="form-control me-2 rounded-0" type="search" placeholder="Digite o produto"
-                        aria-label="Search">
+                        aria-label="Pesquisar">
                     <button class="btn btn-outline-light rounded-0" type="submit">Buscar</button>
                 </form>
             </div>
@@ -108,12 +110,14 @@
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <!-- alterar esses textos, que melhoram a experiência de usuário de leitores de tela, são referentes aos botões de avançar e voltar banner (estava em inglês, trouxe para o português) -->
+            <span class="visually-hidden">Anterior</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
             data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <!-- mesma coisa da descrição do texto "anterior", logo acima -->
+            <span class="visually-hidden">Próximo</span>
         </button>
     </div>
 
