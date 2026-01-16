@@ -1,464 +1,300 @@
 <!DOCTYPE html>
-<!-- facilitando acessibilidade para leitores de tela -->
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- adicionando logo ao lado do title da página -->
-    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-    <title>Meteora</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <!-- link para incluir os ícones do bootstrap no projeto, este metódo abaixo é via cdn -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+  <title>Meteora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="./estilos.css">
 </head>
 
 <body>
 
-    <!-- sm seguindo os breakpoins para que ele apenas fique no modo de "menu hamburger" em telas menores que 576px, assim, atingindo mais as telas de celulares e seguindo a prototipação do figma -->
-    <!-- ! bg-black não se encontra na doc (tb n achei navbar-dark) - porém, o bg black deixa o fundo em preto e navbar-dark faz o conteúdo da navbar(textos etc) se adaptarem ao fundo escurto, ou seja, ficam mais claros -->
-    <!-- deixei md, pois a partir de 600 e pouco px a tela estava bugando  parte de pesquisa/busca na navbar que ficava para fora da tela, então para normalizar deixei a partir de tablests -->
-    <nav class="navbar navbar-expand-md bg-black navbar-dark">
-        <div class="container-fluid">
-            <!--! ao addicionar img ela ocupa mais espaço que deveria e descentraliza os nossos elementos da navbar -->
-            <!-- ? para corrigir isso, utiliza-se d-block na img para fazer com que ela ocupe apenas o espaço que ela tem (largura x altura), pois quando se adiciona uma imagem na aplicação, ela geralmente vem com um espaçemento que atrapalha os elementos ao redor -->
-            <!-- ? também usamos m-0 em h1 para remover toda a margem que ele possui por padrão -->
-            <!-- ? adicionamos a img dentro de um h1 por questões de SEO, pois os mecanismos de busca (navegadores etc) priorizam o conteúdo dentro do h1, e encontrar de cara a logo da empresa é bom para a marca -->
-            <a class="navbar-brand" href="#">
-                <h1 class="m-0"><img class="d-block" src="./assets/logo-meteora.png" alt=""></h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- comandos anteriores que vieram por padrão e estavam causando bugs em algumas telas: "mb-2 mb-lg-0" - lg se aplica apenas a telas >=992px e estavam conflitando em outras resoluções deixando o espaçamento desequilibrado (mb-2 já bugava todas as resoluções mesmo, pois era geral, e em telas maiores dava uma disfarçada apenas) -->
-                <ul class="navbar-nav me-auto ">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lojas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Novidades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Promoção</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sacola.html">Sacola</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <!-- para os leitores de tela, o conteúdo do aria label será falado para eles, por isso é importante deixa-los explicativos e em português (como peguei do bootstrap, ele estava em inglês (search)) -->
-                    <input class="form-control me-2 rounded-0" type="search" placeholder="Digite o produto"
-                        aria-label="Pesquisar">
-                    <button class="btn btn-outline-light rounded-0" type="submit">Buscar</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <!-- !classe img-fluid do bootstrap auxilia a fazer com que a img fique no espaço reservado para ela, sem que se distorça -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <!-- !pedindo w-100 evita que tenha o bug que aconteceu comigo de chegar em telas maiores de 1400px e ficar sobrando um espaço em branco -->
-                <img class="w-100 img-fluid d-md-none" src="./assets/Mobile/banner1-mobile.png"
-                    alt="Modelo feminina vestindo blusa rosa fluorescente, em fundo lilás.">
-                <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./assets/Tablet/banner1-tablet.png"
-                    alt="Modelo feminina vestindo blusa rosa fluorescente, em fundo lilás.">
-                <img class="w-100 img-fluid d-none d-xl-block" src="./assets/Desktop/banner1-desktop.png"
-                    alt="Modelo feminina vestindo blusa rosa fluorescente, em fundo lilás.">
-            </div>
-            <div class="carousel-item">
-                <img class="w-100 img-fluid d-md-none" src="./assets/Mobile/banner2-mobile.png"
-                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
-                <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./assets/Tablet/banner2-tablet.png"
-                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
-                <img class="w-100 img-fluid d-none d-xl-block" src="./assets/Desktop/banner2-desktop.png"
-                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
-                <div class="carousel-caption">
-                    <h5 class="fs-1">COLEÇÃO ATEMPORAL</h5>
-                    <p class="fs-4">Estilo e qualidade para durar.</p>
-                </div>
-            </div>
-            <!-- !posição dos elementos filhos serão relativas a esse elemento pai (carousel-item/que aplicou a classe) -->
-            <div class="carousel-item position-relative">
-                <img class="w-100 img-fluid d-md-none" src="./assets/Mobile/banner3-mobile.png"
-                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
-                <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./assets/Tablet/banner3-tablet.png"
-                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
-                <img class="w-100 img-fluid d-none d-xl-block" src="./assets/Desktop/banner3-desktop.png"
-                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
-                <!-- ? através dessa combinação de position absolute e position relative (div pai) é possível alterar a posição dessa div para ficar na onde desejo, no caso, para ficarem igual ao wireframe de alta qualidade -->
-                <div class="carousel-caption position-absolute posicao">
-                    <h5 class="fs-1">COLEÇÃO ATEMPORAL</h5>
-                    <p class="fs-4">Alto impacto visual, baixo impacto ambiental!</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <!-- alterar esses textos, que melhoram a experiência de usuário de leitores de tela, são referentes aos botões de avançar e voltar banner (estava em inglês, trouxe para o português) -->
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <!-- mesma coisa da descrição do texto "anterior", logo acima -->
-            <span class="visually-hidden">Próximo</span>
-        </button>
-    </div>
-
-    <h2 class="text-center my-3 my-md-5">Busque por categoria</h2>
-
-    <!-- para possuir colunas é necessário uma linha, por isso o comando row, em cada linha, tenho 12 colunas, aqui, quero que cada card ocupe 6 colunas (ocupou as colunas, o próximo card vai "para baixo" e ocupa 6 colunas abaixo do card que já ocupou o restante acima) -->
-    <!-- mx-auto diz para calcular automaticamente os margins laterais (left e right), onde aqui está centralizando os elementos filhos na tela e g-4 nada mais é que o comando css: gap, onde 4 determina o "número de pixels" (no bootstrap vai de 1-5) e o valor do gap não influencia na quantidade de colunas que cada card ocupa, então, se um card ocupa 4 colunas e possui g-5, ele não terá influência (ou terá pouca nesse espaçamento dos cards)-->
-    <div class="container row mx-auto g-4">
-
-        <!-- !o que coloca o espaçamento lateral entre os cards é a divisão de colunas, os comandos "col-6 col-md-4 col-xxl-2 etc." -->
-        <!-- col-6 por si só refere-se a telas de celular (pensando em boas práticas) -->
-        <!-- col-md-4 atinge telas de tablets, onde, quero que cada card ocupe 4 colunas (como são 12, 3 cards = 12 colunas) -->
-        <!-- col-xxl-2 refere-se a telas de monitores e quero que neles todos os cards fiquem na mesma linha, ou seja, quero que cada card ocupe 2 colunas, aqui tenho 6 cards, logo: 6 * 2 = 12 (assim ocupando fazendo que todos os cards ocupem as colunas de apenas uma linha)-->
-        <div class="col-6 col-md-4 col-xxl-2">
-            <a href="camisetas.html">
-                <div class="card rounded-0 border-0">
-                    <!-- ? de telas md para cima não aparece, apenas para sm para baixo (ou seja, telas de celulares) -->
-                    <img class="d-md-none" src="./assets/Mobile/categorias/categoria-camiseta.png"
-                        alt="Camiseta masculina de manga na cor verde, com bolso e detalhe em vermelho.">
-                    <!-- ? por padrão não aparece, porém aparece em telas md e em telas xl não -->
-                    <img class="d-md-none d-md-block d-xl-none" src="./assets/Mobile/categorias/categoria-camiseta.png"
-                        alt="Camiseta masculina de manga na cor verde, com bolso e detalhe em vermelho.">
-                    <!-- ? por padrão não aparece, porém aparece em telas xl -->
-                    <img class="d-md-none d-xl-block" src="./assets/Mobile/categorias/categoria-camiseta.png"
-                        alt="Camiseta masculina de manga na cor verde, com bolso e detalhe em vermelho.">
-                    <!-- ? card text é adicionado para ajustar o texto dentro do card, ficando "mais bonito visualmente" através de espaçamentos extras, da impressão de estar mais organizado no card e se alinha com o estilo padrão de cards do bootstrap (além é claro, de remover aquele espaçamento ridículo que toda tag "p" possui no bootstrap) -->
-                    <!-- ? text-bg-dark deixa a cor dos textos em branco também (acredito que a função dessa classe é fazer com que os textos filhos tenham a cor branca por saberem que o bg é escuro, onde, não faria sentido text-bg-dark deixar escuro também sendo que o fundo da div já é escuro, loucura né?) -->
-                    <div class="card-header bg-black text-bg-dark">
-                        <p class="text-center card-text">Camisetas</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-xxl-2">
-            <a href="bolsas.html">
-                <div class="card h-100 rounded-0 border-0">
-                    <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-bolsas.png"
-                        alt="Bolsa feminina de couro na cor marrom, com cortes quadrados, e alça dourada em formato de corrente com detalhe verde, em fundo verde limão.">
-                    <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-bolsas.png"
-                        alt="Bolsa feminina de couro na cor marrom, com cortes quadrados, e alça dourada em formato de corrente com detalhe verde, em fundo verde limão.">
-                    <img class="d-none h-100 d-xl-block" src="./assets/Desktop/categorias/categoria-bolsa.png"
-                        alt="Bolsa feminina de couro na cor marrom, com cortes quadrados, e alça dourada em formato de corrente com detalhe verde, em fundo verde limão.">
-                    <div class="card-header bg-black text-bg-dark">
-                        <p class="text-center card-text">
-                            Bolsas
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-xxl-2">
-            <a href="calcas.html">
-                <div class="card h-100 rounded-0 border-0">
-                    <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-calcas.png"
-                        alt="Quatro calças jeans dobradas e organizadas uma acima da outra, em fundo verde limão.">
-                    <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-calcas.png"
-                        alt="Quatro calças jeans dobradas e organizadas uma acima da outra, em fundo verde limão.">
-                    <img class="d-none h-100 d-xl-block" src="./assets/Desktop/categorias/categoria-calcas.png"
-                        alt="Quatro calças jeans dobradas e organizadas uma acima da outra, em fundo verde limão.">
-                    <div class="card-header bg-black text-bg-dark">
-                        <p class="text-center card-text">
-                            Calças
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-xxl-2">
-            <a href="casacos.html">
-                <div class="card h-100 rounded-0 border-0">
-                    <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-casacos.png"
-                        alt="Casaco masculino na cor marrom em fundo verde limão.">
-                    <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-casacos.png"
-                        alt="Casaco masculino na cor marrom em fundo verde limão.">
-                    <img class="d-none h-100 d-xl-block" src="./assets/Desktop/categorias/categoria-casacos.png"
-                        alt="Casaco masculino na cor marrom em fundo verde limão.">
-                    <div class="card-header bg-black text-bg-dark">
-                        <p class="text-center card-text">
-                            Casacos
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-xxl-2">
-            <a href="oculos.html">
-                <div class="card h-100 rounded-0 border-0">
-                    <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-oculos.png"
-                        alt="Óculos de Sol com lentes arredondadas e armação dourada, em fundo verde limão.">
-                    <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-oculos.png"
-                        alt="Óculos de Sol com lentes arredondadas e armação dourada, em fundo verde limão.">
-                    <img class="d-none h-100 d-xl-block" src="./assets/Desktop/categorias/categoria-oculos.png"
-                        alt="Óculos de Sol com lentes arredondadas e armação dourada, em fundo verde limão.">
-                    <div class="card-header bg-black text-bg-dark">
-                        <p class="text-center card-text">
-                            Óculos
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-    </div>
-
-    <!-- container para ajustar em telas menores -->
-    <h2 class="container text-center my-3 my-md-5">Produtos que estão bombando!</h2>
-
-    <!-- <div class="container row mx-auto" id="produtos">
-
-
-
-    </div> -->
-
-    <!-- deixando da forma que instrutor ensinou, porém (e também acho melhor) é possível resolver isso utilizando gap-4 apenas na div pai das colunas ao inves de pb-4 -->
-    <!-- um motivo para ele ter usado pb-4 é porque o gap da um espaçamento em todos os lados do card, onde nesta situação, onde para celular é não é necessário utilizar um espaçamento do lado pois fica um em cada linha, é melhor ter apenas o espaçamento onde necessário (no caso, embaixo) -->
-    <!-- mx-autro faz o row centralizar no meio da tela -->
-    <!-- !o que coloca o espaçamento lateral entre os cards é a divisão de colunas, os comandos "col-6 col-md-4 col-xxl-2 etc." -->
-    <div class="container row mx-auto">
-
-        <div class="col-12 col-md-6 col-xl-4 pb-4">
-            <div class="card rounded-0 border-none">
-                <img class="d-md-none" src="./assets/Mobile/produtos/camiseta.png"
-                    alt="Modelo masculo vestindo touca preta, blusa marrom e calça jeans, com uma parede cinza de fundo.">
-
-                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/produtos/camiseta.png"
-                    alt="Modelo masculo vestindo touca preta, blusa marrom e calça jeans, com uma parede cinza de fundo.">
-
-                <img class="d-none d-xl-block" src="./assets/Desktop/produtos/camiseta.png"
-                    alt="Modelo masculo vestindo touca preta, blusa marrom e calça jeans, com uma parede cinza de fundo.">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Camiseta Conforto</h5>
-                    <p class="card-text">
-                        Multicores e tamanhos. Tecido de algodão 100%, fresquinho para o verão. Modelagem unissex.
-                    </p>
-                    <div class="mt-auto">
-                        <p class="fw-bold mt-2">R$ 70,00</p>
-                        <!-- mantive a classe btn apenas para dar os espaçamentos de um botão -->
-                        <a href="#" class="btn btn-lilas text-white rounded-0 border-0">Ver mais</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-xl-4 pb-4">
-            <div class="card h-100 rounded-0 border-none">
-                <img class="h-100 d-md-none" src="./assets/Mobile/produtos/calca.png"
-                    alt="Modelo feminina vestindo blusa marrom, calça bege, par de sapatos altos na cor branca, cordão e pulseira, em um ambiente aberto com chão de terra e matos secos.">
-
-                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/produtos/calca.png"
-                    alt="Modelo feminina vestindo blusa marrom, calça bege, par de sapatos altos na cor branca, cordão e pulseira, em um ambiente aberto com chão de terra e matos secos.">
-
-                <img class="d-none d-xl-block" src="./assets/Desktop/produtos/calca.png"
-                    alt="Modelo feminina vestindo blusa marrom, calça bege, par de sapatos altos na cor branca, cordão e pulseira, em um ambiente aberto com chão de terra e matos secos.">
-
-                <!-- ! transformando o card body em flexivel e mudando sua direção para de coluna, pois quero manter os elementos um embaixo do outro, porém quero "empurrar" para baixo o máximo possível a div com os valores  e o botão ver mais, para isso posso utilizar o mt-auto, porém, ele só funciona com o flex, quando uso o auto, ele empurra o elemento o máximo que der, no caso, usei mt-auto, então ele vai pegar o máximo possível de margin top -->
-                <!-- ? seguindo os conceitos acima o os valores e o botão ver mais sempre estarão alinhados aos cards do lado (em telas de tablet, dsktop etc) independente do tamanho da descrição do produto! sendo grande ou não -->
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Calça Alfaiataria</h5>
-                    <p class="card-text">
-                        Modelo Wide Leg alfaiataria em linho. Uma peça pra vida toda!
-                    </p>
-
-                    <div class="mt-auto">
-                        <p class="fw-bold">R$ 180,00</p>
-                        <a href="#" class="btn btn-lilas text-white rounded-0 border-0">Ver mais</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-xl-4 pb-4">
-            <div class="card h-100 rounded-0 border-none">
-                <img class="d-md-none" src="./assets/Mobile/produtos/tenis.png"
-                    alt="Foco nos pés de modelo usando par de tênis e meia na cor branca, e calça na cor preta, pisando em uma poça de água.">
-
-                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/produtos/tenis.png"
-                    alt="Foco nos pés de modelo usando par de tênis e meia na cor branca, e calça na cor preta, pisando em uma poça de água.">
-
-                <img class="d-none d-xl-block" src="./assets/Desktop/produtos/tenis.png"
-                    alt="Foco nos pés de modelo usando par de tênis e meia na cor branca, e calça na cor preta, pisando em uma poça de água.">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Tênis Chunky</h5>
-                    <p class="card-text">
-                        Snicker casual com solado mais alto e modelagem robusta. Modelo unissex.
-                    </p>
-
-                    <div class="mt-auto">
-                        <p class="fw-bold">R$ 250,00</p>
-                        <a href="#" class="btn btn-lilas text-white rounded-0 border-0">Ver mais</a>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-xl-4 pb-4">
-            <div class="card h-100 rounded-0 border-none">
-                <img class="d-md-none" src="./assets/Mobile/produtos/jaqueta-jeans.png"
-                    alt="Modelo masculino vestindo toca e calça na cor preta, jaqueta jeans azul, blusa branca e cordão dourado, em um fundo branco.">
-
-                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/produtos/jaqueta-jeans.png"
-                    alt="Modelo masculino vestindo toca e calça na cor preta, jaqueta jeans azul, blusa branca e cordão dourado, em um fundo branco.">
-
-                <img class="d-none d-xl-block" src="./assets/Desktop/produtos/jaqueta-jeans.png"
-                    alt="Modelo masculino vestindo toca e calça na cor preta, jaqueta jeans azul, blusa branca e cordão dourado, em um fundo branco.">
-
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Jaqueta Jeans</h5>
-                    <p class="card-text">
-                        Modelo unissex oversized com gola de camurça. Atemporal e autêntica!
-                    </p>
-                    <div class="mt-auto">
-                        <p class="fw-bold">R$ 30,00</p>
-                        <a href="#" class="btn btn-lilas text-white rounded-0 border-0">Ver mais</a>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-xl-4 pb-4">
-            <div class="card h-100 rounded-0 border-none">
-                <img class="d-md-none" src="./assets/Mobile/produtos/oculos.png"
-                    alt="Modelo masculino com blusa branca e um par de óculos de lentes transparentes arredondadas, utilizando um notebook, com um cachorro poodle branco no seu colo, e em um fundo branco.">
-
-                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/produtos/oculos.png"
-                    alt="Modelo masculino com blusa branca e um par de óculos de lentes transparentes arredondadas, utilizando um notebook, com um cachorro poodle branco no seu colo, e em um fundo branco.">
-
-                <img class="d-none d-xl-block" src="./assets/Desktop/produtos/oculos.png"
-                    alt="Modelo masculino com blusa branca e um par de óculos de lentes transparentes arredondadas, utilizando um notebook, com um cachorro poodle branco no seu colo, e em um fundo branco.">
-
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Óculos Redondo</h5>
-                    <p class="card-text">
-                        Armação metálica em grafite com lentes arredondadas. Sem erro!
-                    </p>
-                    <div class="mt-auto">
-                        <p class="fw-bold">R$ 120,00</p>
-                        <a href="#" class="btn btn-lilas text-white rounded-0 border-0">Ver mais</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-xl-4 pb-4">
-            <div class="card h-100 rounded-0 border-none">
-                <img class="d-md-none" src="./assets/Mobile/produtos/bolsa.png"
-                    alt="Cintura, pernas e pés de modelo feminina vestindo sobretudo de cor predominante bege com detalhes em tom vermelho e escuro, com calça e par de sapatos na cor preta, segurando bolsa na cor bege, com fundo de prédio.">
-
-                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/produtos/bolsa.png"
-                    alt="Cintura, pernas e pés de modelo feminina vestindo sobretudo de cor predominante bege com detalhes em tom vermelho e escuro, com calça e par de sapatos na cor preta, segurando bolsa na cor bege, com fundo de prédio.">
-                <img class="d-none d-xl-block" src="./assets/Desktop/produtos/bolsa.png"
-                    alt="Cintura, pernas e pés de modelo feminina vestindo sobretudo de cor predominante bege com detalhes em tom vermelho e escuro, com calça e par de sapatos na cor preta, segurando bolsa na cor bege, com fundo de prédio.">
-
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Bolsa coringa</h5>
-                    <p class="card-text">
-                        Bolsa camel em couro sintético de alta duração. Ideal para acompanhar você por uma vida!
-                    </p>
-                    <div class="mt-auto">
-                        <p class="fw-bold">R$ 120,00</p>
-                        <a href="#" class="btn btn-lilas text-white rounded-0 border-0">Ver mais</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- não preciso utilizar container aqui, pois o conteúdo desta section é algo mais "simples" onde não terei que usar grid, nem nada -->
-    <!-- uso de section ao invés de uma div aqui por conta de semântica mesmo, pois seria possível alcançar o mesmo resultado com uma div -->
-    <section class="pb-4 bg-black text-white">
-
-        <h2 class="text-center py-3">Conheça todas as nossas facilidades</h2>
-
-        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-lg-center gap-3 px-lg-3">
-            <div class="divs-facilidades d-flex align-items-lg-center">
-                <div><i class="bi bi-x-diamond fs-1 verde_limao"></i></div>
-                <div>
-                    <div class="ms-3 mb-1 verde_limao">PAGUE PELO PIX</div>
-                    <div class="texto-menor ms-3">Ganhe 5% OFF em
-                        pagamentos via PIX</div>
-                </div>
-            </div>
-
-            <div class="divs-facilidades d-flex align-items-lg-center">
-                <div><i class="bi bi-arrow-repeat fs-1 verde_limao"></i></div>
-                <div>
-                    <div class="ms-3 mb-1 verde_limao">TROCA GRÁTIS</div>
-                    <div class="texto-menor ms-3">Fique livre para trocar em até 30 dias.</div>
-                </div>
-            </div>
-
-            <div class="divs-facilidades d-flex align-items-lg-center">
-                <div><i class="bi bi-flower1 fs-1 verde_limao"></i></div>
-                <div>
-                    <div class="ms-3 mb-1 verde_limao">SUSTENTABILIDADE</div>
-                    <div class="texto-menor ms-3">Moda responsável, que respeita o meio ambiente.</div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- my para não ficar colado nas caixas debaixo e de cime e mx-4 para não ficar colado nas extremidades em telas menores -->
-    <!-- !nas telas de navegador estava ocupando muito espaço, tava achando feio, então fiz uma baianada para atindir apenas telas xl (1200px), defini uma largura fixa para o a classe formulario nessas condições e alinhei ao centro, ficando exatamente como eu queria e não estranho ocupando todo aquele espaço desnecessário no desktop -->
-    <div class="d-xl-flex justify-content-xl-center my-3 my-xl-5 mx-4">
-        <form class="border border-secondary p-4 text-center formulario">
-            <h5>Quer receber nossas novidades, promoções exclusivas e 10% OFF na primeira compra? Cadastre-se!</h5>
-            <!-- input group junta o input dentro da div com seu respectivo botão -->
-            <div class="input-group my-3">
-                <!-- form-control faz o input (juntamente do seu botão) ocuparem toda a largura disponível -->
-                <input type="email" class="form-control border border-secondary rounded-0"
-                    placeholder="Digite seu e-mail" aria-label="Digite seu e-mail" aria-describedby="button-addon2" />
-                <button type="button" id="button-addon2" class="btn-lilas px-3 border-0 text-white">Enviar</button>
-            </div>
+  <nav class="navbar navbar-expand-md bg-black navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <h1 class="m-0"><img class="d-block" src="./assets/logo-meteora.png" alt="Logo da loja Meteora"></h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Lojas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Novidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Promoção</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sacola.html">Sacola</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 rounded-0" type="search" placeholder="Digite o produto"
+            aria-label="Pesquisar">
+          <button class="btn btn-outline-light rounded-0" type="submit">Buscar</button>
         </form>
+      </div>
+    </div>
+  </nav>
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="w-100 img-fluid d-md-none" src="./assets/Mobile/banner1-mobile.png"
+          alt="Modelo feminina vestindo blusa rosa fluorescente, em fundo lilás.">
+        <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./assets/Tablet/banner1-tablet.png"
+          alt="Modelo feminina vestindo blusa rosa fluorescente, em fundo lilás.">
+        <img class="w-100 img-fluid d-none d-xl-block" src="./assets/Desktop/banner1-desktop.png"
+          alt="Modelo feminina vestindo blusa rosa fluorescente, em fundo lilás.">
+      </div>
+      <div class="carousel-item">
+        <img class="w-100 img-fluid d-md-none" src="./assets/Mobile/banner2-mobile.png"
+          alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+        <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./assets/Tablet/banner2-tablet.png"
+          alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+        <img class="w-100 img-fluid d-none d-xl-block" src="./assets/Desktop/banner2-desktop.png"
+          alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+        <div class="carousel-caption">
+          <h5 class="fs-1">COLEÇÃO ATEMPORAL</h5>
+          <p class="fs-4">Estilo e qualidade para durar.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="w-100 img-fluid d-md-none" src="./assets/Mobile/banner3-mobile.png"
+          alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+        <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./assets/Tablet/banner3-tablet.png"
+          alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+        <img class="w-100 img-fluid d-none d-xl-block" src="./assets/Desktop/banner3-desktop.png"
+          alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+        <div class="carousel-caption">
+          <h5 class="fs-1">COLEÇÃO ATEMPORAL</h5>
+          <p class="fs-4">Alto impacto visual, baixo impacto ambiental!</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
+
+  <h2 class="text-center my-3 my-xl-5">Busque por categoria:</h2>
+
+  <div class="container row mx-auto g-4">
+
+    <div class="col-6 col-md-4 col-xxl-2">
+      <a href="camisetas.html">
+        <div class="card rounded-0 border-0">
+          <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-camiseta.png"
+            alt="Camiseta masculina de manga na cor verde, com bolso, com detalhe vermelho.">
+          <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-camiseta.png"
+            alt="Camiseta masculina de manga na cor verde, com bolso, com detalhe vermelho.">
+          <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-camiseta.png"
+            alt="Camiseta masculina de manga na cor verde, com bolso, com detalhe vermelho.">
+          <div class="card-header bg-black text-bg-dark">
+            <p class="text-center card-text">
+              Camisetas
+            </p>
+          </div>
+        </div>
+      </a>
     </div>
 
-    <!--!por mais queseja possível colocar o icone de "©" existem alguns navegadores que não conseguem interpreta-lo -->
-    <!-- !para evitar qualquer tipo de problema, o bootstrap, dentro de seus ícones, oferece ese mesmo símbolo, que estamos utilizando logo abaixo -->
-    <footer class="text-center bg-black text-bg-dark">
-        <!-- ! mx aplicado aqui pois em resoluções de celulares, fica muito colado nas extremidades da tela -->
-        <p class="py-3 mx-1">2023 <i class="bi bi-c-circle"></i> Desenvolvido por Alura | Projeto fictício sem fins
-            comerciais.</p>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
+    <div class="col-6 col-md-4 col-xxl-2">
+      <div class="card rounded-0 border-0">
+        <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-bolsas.png"
+          alt="Bolsa feminina de couro na cor marrom, com cortes quadrados, e alça dourada em formato de corrente com detalhe verde, em fundo verde limão.">
+        <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-bolsas.png"
+          alt="Bolsa feminina de couro na cor marrom, com cortes quadrados, e alça dourada em formato de corrente com detalhe verde, em fundo verde limão.">
+        <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-bolsa.png"
+          alt="Bolsa feminina de couro na cor marrom, com cortes quadrados, e alça dourada em formato de corrente com detalhe verde, em fundo verde limão.">
+        <div class="card-header bg-black text-bg-dark">
+          <p class="text-center card-text">
+            Bolsas
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-xxl-2">
+      <div class="card rounded-0 border-0">
+        <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-calcados.png"
+          alt="Par de tênis unissex com cor predominante branca e traços na cores laranja, azul, verde e cadarço vermelho, em fundo verde limão.">
+        <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-calcados.png"
+          alt="Par de tênis unissex com cor predominante branca e traços na cores laranja, azul, verde e cadarço vermelho, em fundo verde limão.">
+        <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-calcados.png"
+          alt="Par de tênis unissex com cor predominante branca e traços na cores laranja, azul, verde e cadarço vermelho, em fundo verde limão.">
+        <div class="card-header bg-black text-bg-dark">
+          <p class="text-center card-text">
+            Calçados
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-xxl-2">
+      <div class="card rounded-0 border-0">
+        <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-calcas.png"
+          alt="Quatro calças jeans dobradas e organizadas uma acima da outra, em fundo verde limão.">
+        <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-calcas.png"
+          alt="Quatro calças jeans dobradas e organizadas uma acima da outra, em fundo verde limão.">
+        <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-calcas.png"
+          alt="Quatro calças jeans dobradas e organizadas uma acima da outra, em fundo verde limão.">
+        <div class="card-header bg-black text-bg-dark">
+          <p class="text-center card-text">
+            Calças
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-xxl-2">
+      <div class="card rounded-0 border-0">
+        <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-casacos.png"
+          alt="Casaco masculino na cor marrom em fundo verde limão.">
+        <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-casacos.png"
+          alt="Casaco masculino na cor marrom em fundo verde limão.">
+        <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-casacos.png"
+          alt="Casaco masculino na cor marrom em fundo verde limão.">
+        <div class="card-header bg-black text-bg-dark">
+          <p class="text-center card-text">
+            Casacos
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-xxl-2">
+      <div class="card rounded-0 border-0">
+        <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-oculos.png"
+          alt="Óculos de Sol com lentes arredondadas e armação dourada, em fundo verde limão.">
+        <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-oculos.png"
+          alt="Óculos de Sol com lentes arredondadas e armação dourada, em fundo verde limão.">
+        <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-oculos.png"
+          alt="Óculos de Sol com lentes arredondadas e armação dourada, em fundo verde limão.">
+        <div class="card-header bg-black text-bg-dark">
+          <p class="text-center card-text">
+            Óculos
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 class="container text-center my-3 my-xl-5">Produtos que estão bombando!</h2>
+
+  <div class="container row mx-auto" id="produtos">
+
+
+
+  </div>
+
+  <section class="pb-4 bg-black text-bg-dark">
+
+    <h2 class="text-center py-3">Conheça todas as nossas facilidades</h2>
+
+    <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-3 px-3">
+      <div class="divs-facilidades d-flex align-items-center">
+        <div><i class="verde-limao bi bi-x-diamond fs-1"></i></div>
+        <div>
+          <div class="ms-3 mb-1 verde-limao">PAGUE PELO PIX</div>
+          <div class="texto-menor ms-3">Ganhe 5% OFF em
+            pagamentos via PIX</div>
+        </div>
+      </div>
+
+      <div class="divs-facilidades d-flex">
+        <div><i class="verde-limao bi bi-arrow-repeat fs-1"></i></div>
+        <div>
+          <div class="ms-3 mb-1 verde-limao">TROCA GRÁTIS</div>
+          <div class="texto-menor ms-3">Fique livre para trocar em até 30 dias.</div>
+        </div>
+      </div>
+
+      <div class="divs-facilidades d-flex">
+        <div><i class="verde-limao bi bi-flower1 fs-1"></i></div>
+        <div>
+          <div class="ms-3 mb-1 verde-limao">SUSTENTABILIDADE</div>
+          <div class="texto-menor ms-3">Moda responsável, que respeita o meio ambiente.</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <form class="container border border-secondary my-3 my-xl-5 p-3 text-center div-novidades mx-auto">
+    <h5>
+      Quer receber nossas novidades, promoções exclusivas e 10% OFF na primeira
+      compra? Cadastre-se!
+    </h5>
+
+    <div class="input-group my-3">
+      <input type="email" class="form-control border-secondary rounded-0" placeholder="Digite seu e-mail"
+        aria-label="Digite seu e-mail" aria-describedby="button-addon2" />
+      <button type="button" class="btn btn-primary botao-lilas rounded-0 border-0" data-bs-toggle="modal"
+        data-bs-target="#emailModal" id="button-addon2">Enviar</button>
+    </div>
+  </form>
+
+  <footer class="text-center bg-black text-bg-dark">
+    <p class="card-text py-3">2023 <i class="bi bi-c-circle"></i> Desenvolvido por Alura | Projeto fictício sem fins
+      comerciais.</p>
+  </footer>
+
+  <!-- Modal email -->
+  <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-header-icon">
+            <img src="assets/check-circle.svg">
+            <h1 class="modal-title fs-5" id="emailModalLabel">E-mail cadastrado com sucesso!</h1>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Em breve você receberá novidades exclusivas da Meteora.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
